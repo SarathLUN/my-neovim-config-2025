@@ -26,6 +26,5 @@ If you are interested my currently used personal configuration and setup, you ca
 - [X] Mason
 - [X] dressing.nvim
 - [X] conform.nvim
-- [ ] blink-cmp
-- [ ] snacks.indent
+- [X] blink-cmp
 
