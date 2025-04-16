@@ -27,7 +27,8 @@ You may use this configuration as an inspiration to create youre own. Follow the
 - [X] conform.nvim
 - [X] blink-cmp
 - [X] markdown-preview.nvim
-- [ ] lazy-git.nvim
+- [X] lazy-git.nvim
+- [X] lsp for golang
 
 Here is my complete neovim configuration on [GitHub](https://github.com/SarathLUN/my-neovim-config-2025).
 
