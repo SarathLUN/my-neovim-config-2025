@@ -8,3 +8,47 @@ vim.keymap.set("n", "<leader>cf", function()
     })
 end, { desc = "Format current file" })
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "Clear search Hight-light" })
+
+-- ToggleTerm Keymaps
+local Terminal = require("toggleterm.terminal").Terminal
+
+-- Helper function to toggle terminal with specific direction
+local function toggle_term(direction)
+    -- Check if a terminal with the specified direction exists
+    local terms = require("toggleterm.terminal").get_all()
+    local target_term = nil
+    for _, term in ipairs(terms) do
+        if term:is_open() and term.direction == direction then
+            target_term = term
+            break
+        end
+    end
+
+    if target_term then
+        -- If found and open, just toggle it
+        target_term:toggle()
+    else
+        -- Otherwise, create a new one with the specified direction and toggle
+        local new_term = Terminal:new({ direction = direction })
+        new_term:toggle()
+    end
+end
+
+-- Floating terminal
+vim.keymap.set("n", "<leader>tf", function()
+    toggle_term("float")
+end, { desc = "Toggle Floating Terminal" })
+-- Vertical terminal
+vim.keymap.set("n", "<leader>tv", function()
+    toggle_term("vertical")
+end, { desc = "Toggle Vertical Terminal" })
+-- Horizontal terminal
+vim.keymap.set("n", "<leader>th", function()
+    toggle_term("horizontal")
+end, { desc = "Toggle Horizontal Terminal" })
+
+-- Example: Lazygit in a floating terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+vim.keymap.set("n", "<leader>gg", function()
+    lazygit:toggle()
+end, { desc = "Toggle lazygit" })
