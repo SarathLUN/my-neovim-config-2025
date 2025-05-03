@@ -39,4 +39,4 @@ require("config.keymaps")
 
 
 -- For video recording purposes, enable Showkeys onload
-vim.cmd("ShowkeysToggle");
+-- vim.cmd("ShowkeysToggle");
