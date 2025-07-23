@@ -9,6 +9,14 @@ vim.keymap.set("n", "<leader>cf", function()
 end, { desc = "Format current file" })
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "Clear search Hight-light" })
 
+-- Prevent x and delete from overriding clipboard
+vim.keymap.set("n", "x", '"_x', { desc = "Delete character without yanking" })
+vim.keymap.set("n", "X", '"_X', { desc = "Delete character backwards without yanking" })
+vim.keymap.set("n", "<Del>", '"_x', { desc = "Delete character without yanking" })
+vim.keymap.set("v", "x", '"_x', { desc = "Delete selection without yanking" })
+vim.keymap.set("v", "X", '"_X', { desc = "Delete selection backwards without yanking" })
+vim.keymap.set("v", "<Del>", '"_x', { desc = "Delete selection without yanking" })
+
 -- ToggleTerm Keymaps
 local Terminal = require("toggleterm.terminal").Terminal
 
