@@ -1,2 +1,6 @@
-return { 'echasnovski/mini.statusline', version = false, opts={} }
+return {
+    'echasnovski/mini.statusline',
+    version = '*', -- Use latest stable version
+    opts = {}
+}
 
