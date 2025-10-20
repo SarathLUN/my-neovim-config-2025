@@ -94,6 +94,20 @@ lua/
 :MasonLog
 ```
 
+### Markdown Preview Theme
+```bash
+# Switch to dark theme
+:MarkdownPreviewDark
+
+# Switch to light theme
+:MarkdownPreviewLight
+
+# Auto-detect based on OS theme (default)
+:MarkdownPreviewAuto
+
+# Note: After changing theme, restart the preview (:MarkdownPreviewToggle twice)
+```
+
 ### Key Mappings (Normal Mode)
 
 **File Navigation:**
@@ -121,6 +135,15 @@ lua/
 **Formatting & Editing:**
 - `<leader>cf` - Format current file (conform.nvim)
 - `<leader>h` - Clear search highlight
+
+**Markdown:**
+- `<leader>mp` - Toggle markdown preview in browser
+
+**UI/Theme:**
+- `<leader>uL` - Catppuccin Latte (light)
+- `<leader>uF` - Catppuccin Frappé (dark soft)
+- `<leader>uM` - Catppuccin Macchiato (dark medium)
+- `<leader>uC` - Catppuccin Mocha (dark deep)
 
 **Terminal:**
 - `<C-\>` - Toggle default terminal
@@ -185,7 +208,28 @@ formatters_by_ft = {
 ```
 
 ### Colorscheme
-Current theme: **tokyonight** (configured in `lua/plugins/tokyonight.lua`)
+Current theme: **Catppuccin Mocha** (configured in `lua/plugins/catppuccin.lua`)
+
+Available themes:
+- **Catppuccin** - Main theme with 4 flavors (Latte, Frappé, Macchiato, Mocha)
+- **tokyonight** - Alternative theme (configured in `lua/plugins/tokyonight.lua`)
+
+#### Switching Catppuccin Flavors
+
+**Via Commands:**
+- `:CatppuccinLatte` - Light theme
+- `:CatppuccinFrappe` - Dark theme (softer)
+- `:CatppuccinMacchiato` - Dark theme (medium)
+- `:CatppuccinMocha` - Dark theme (default, deepest)
+
+**Via Keymaps:**
+- `<leader>uL` - Switch to Latte (light)
+- `<leader>uF` - Switch to Frappé
+- `<leader>uM` - Switch to Macchiato
+- `<leader>uC` - Switch to Mocha (dark)
+
+**Default Flavor Configuration:**
+Edit `flavour` in `lua/plugins/catppuccin.lua:6` to change the default (latte, frappe, macchiato, or mocha)
 
 ## Reference
 - Configuration inspired by: [YouTube: Neovim from Scratch by MrJakob](https://youtu.be/g1gyYttzxcI?si=zTQLkcXjYp0pdVTE)

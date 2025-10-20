@@ -60,3 +60,12 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "floa
 vim.keymap.set("n", "<leader>gg", function()
     lazygit:toggle()
 end, { desc = "Toggle lazygit" })
+
+-- Markdown Preview
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+
+-- Catppuccin Theme Switching
+vim.keymap.set("n", "<leader>uL", "<cmd>CatppuccinLatte<CR>", { desc = "UI: Catppuccin Latte (light)" })
+vim.keymap.set("n", "<leader>uF", "<cmd>CatppuccinFrappe<CR>", { desc = "UI: Catppuccin Frappé" })
+vim.keymap.set("n", "<leader>uM", "<cmd>CatppuccinMacchiato<CR>", { desc = "UI: Catppuccin Macchiato" })
+vim.keymap.set("n", "<leader>uC", "<cmd>CatppuccinMocha<CR>", { desc = "UI: Catppuccin Mocha (dark)" })
